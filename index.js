@@ -10,3 +10,16 @@ db.user.create({
     console.log(createdUser.get());
 });
 
+// Read from users table
+// db.user.findOne({
+//     where: { firstName: 'Rome' }
+// }).then(foundUser => {
+//     console.log(foundUser.get());
+// });
+
+// Find all users
+db.user.findAll().then(allUsers => {
+    console.log(allUsers);
+    console.log(allUsers[0].get());
+});
+
