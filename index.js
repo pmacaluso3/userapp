@@ -31,3 +31,10 @@ db.user.update({
 }).then(numRowsChanged => {
     console.log(numRowsChanged);
 });
+
+// Delete a user
+db.user.destroy({
+    where: { lastName: 'Bobby' }
+}).then(numRowsDeleted => {
+    console.log(numRowsDeleted);
+});
