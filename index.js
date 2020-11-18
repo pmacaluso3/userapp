@@ -11,11 +11,11 @@ db.user.create({
 });
 
 // Read from users table
-// db.user.findOne({
-//     where: { firstName: 'Rome' }
-// }).then(foundUser => {
-//     console.log(foundUser.get());
-// });
+db.user.findOne({
+    where: { firstName: 'Rome' }
+}).then(foundUser => {
+    console.log(foundUser.get());
+});
 
 // Find all users
 db.user.findAll().then(allUsers => {
@@ -23,3 +23,11 @@ db.user.findAll().then(allUsers => {
     console.log(allUsers[0].get());
 });
 
+// Update a user
+db.user.update({
+    lastName: 'Bobby'
+}, {
+    where: { firstName: 'Billy' }
+}).then(numRowsChanged => {
+    console.log(numRowsChanged);
+});
